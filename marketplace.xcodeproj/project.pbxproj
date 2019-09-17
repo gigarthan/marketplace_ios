@@ -82,7 +82,9 @@
 				E46CE3172331391D003A5420 /* marketplaceUITests */,
 				E46CE2F62331391B003A5420 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		E46CE2F62331391B003A5420 /* Products */ = {
 			isa = PBXGroup;
