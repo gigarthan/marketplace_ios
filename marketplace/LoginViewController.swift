@@ -7,24 +7,120 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
+
+enum UserRole {
+  case BUYER
+  case SELLER
+}
 
 class LoginViewController: UIViewController {
-
+  @IBOutlet weak var emailField: UITextField!
+  @IBOutlet weak var passwordField: UITextField!
+  @IBOutlet weak var buyerSellerButton: UISegmentedControl!
+  
+  var userRole: UserRole = .BUYER
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  func showAlert(title: String, message: String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+    
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
+  }
+  
+  func isFieldsFilled() -> Bool {
+    return ((emailField.text?.isEmpty == false) && (passwordField.text?.isEmpty == false))
+  }
+  
+  func loginUser(email: String, pass: String) {
+    let url = "https://reqres.in/api/login"
+    let formData: [String: Any] = [
+      "email" : email,
+      "password": pass
+    ]
+    
+    Alamofire.request(url, method: .post, parameters: formData, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {
+      response in
+      
+      switch response.result {
+      case .success:
+        self.showAlert(title: "LoggedIn", message: "Success")
+        
+      case .failure:
+        if let data = response.data {
+          let responseData = try! JSON(data: data)
+          var errorMessage: String?
+          errorMessage = responseData["error"].stringValue
+          self.showAlert(title: "Error", message: errorMessage ?? "Invalid")
+        }
+      }
     }
-    */
-
+    
+    
+  }
+  
+  func registerUser(email: String, pass: String) {
+    let url = "https://reqres.in/api/register"
+    let formData: [String: Any] = [
+      "email" : email,
+      "password": pass
+    ]
+    
+    Alamofire.request(url, method: .post, parameters: formData, encoding: JSONEncoding.default, headers: nil).validate().responseJSON {
+      response in
+      
+      switch response.result {
+      case .success:
+        self.showAlert(title: "LoggedIn", message: "Success")
+        
+      case .failure:
+        if let data = response.data {
+          let responseData = try! JSON(data: data)
+          var errorMessage: String?
+          errorMessage = responseData["error"].stringValue
+          self.showAlert(title: "Error", message: errorMessage ?? "Invalid")
+        }
+        
+      }
+    }
+    
+    
+  }
+  
+  func getUserType() -> UserRole {
+    switch buyerSellerButton.selectedSegmentIndex {
+    case 0:
+      return .BUYER
+    case 1:
+      return .SELLER
+    default:
+      return .BUYER
+    }
+  }
+  
+  @IBAction func login(_ sender: Any) {
+    if(isFieldsFilled()) {
+      let email = emailField.text ?? ""
+      let password = passwordField.text ?? ""
+      loginUser(email: email, pass: password)
+    } else {
+      showAlert(title: "Invalid Credentials", message: "Email or Password fields cannot be empty!")
+    }
+  }
+  @IBAction func register(_ sender: Any) {
+    if(isFieldsFilled()) {
+      let email = emailField.text ?? ""
+      let password = passwordField.text ?? ""
+      registerUser(email: email, pass: password)
+    } else {
+      showAlert(title: "Invalid Credentials", message: "Email or Password fields cannot be empty!")
+    }
+  }
 }
