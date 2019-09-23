@@ -51,7 +51,8 @@ class LoginViewController: UIViewController {
       
       switch response.result {
       case .success:
-        self.showAlert(title: "LoggedIn", message: "Success")
+//        self.showAlert(title: "LoggedIn", message: "Success")
+          self.navigateToPage()
         
       case .failure:
         if let data = response.data {
@@ -105,14 +106,27 @@ class LoginViewController: UIViewController {
     }
   }
   
-  @IBAction func login(_ sender: Any) {
-    if(isFieldsFilled()) {
-      let email = emailField.text ?? ""
-      let password = passwordField.text ?? ""
-      loginUser(email: email, pass: password)
-    } else {
-      showAlert(title: "Invalid Credentials", message: "Email or Password fields cannot be empty!")
+  func navigateToPage() {
+    let userType: UserRole = getUserType()
+    switch userType {
+    case .BUYER:
+      performSegue(withIdentifier: "SegueToBuyer", sender: self)
+    case .SELLER:
+      performSegue(withIdentifier: "SegueToSeller", sender: self)
+    default:
+      break
     }
+  }
+  
+  @IBAction func login(_ sender: Any) {
+    self.navigateToPage()
+//    if(isFieldsFilled()) {
+//      let email = emailField.text ?? ""
+//      let password = passwordField.text ?? ""
+//      loginUser(email: email, pass: password)
+//    } else {
+//      showAlert(title: "Invalid Credentials", message: "Email or Password fields cannot be empty!")
+//    }
   }
   @IBAction func register(_ sender: Any) {
     if(isFieldsFilled()) {

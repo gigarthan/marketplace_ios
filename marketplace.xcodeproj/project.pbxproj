@@ -10,10 +10,15 @@
 		311F1B191AED55E7A46631B7 /* Pods_marketplaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A6C3A7C8CB905538BFC2E1 /* Pods_marketplaceUITests.framework */; };
 		4DFC8AE8C7731AFFD86AC2B8 /* Pods_marketplaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FDBDF548E8F76F33BAC0C7 /* Pods_marketplaceTests.framework */; };
 		904004A50D5076E0656FC5F1 /* Pods_marketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC00D0DC3F4220816991231 /* Pods_marketplace.framework */; };
+		E451C4FC23386970002541F4 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451C4FB23386970002541F4 /* Items.swift */; };
+		E451C50023386EBB002541F4 /* BuyerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451C4FF23386EBB002541F4 /* BuyerTableViewController.swift */; };
+		E451C50223387304002541F4 /* BuyerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451C50123387304002541F4 /* BuyerTableViewCell.swift */; };
+		E451C504233892EF002541F4 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451C503233892EF002541F4 /* AddItemViewController.swift */; };
+		E451C508233898E5002541F4 /* SellerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E451C507233898E5002541F4 /* SellerTableViewController.swift */; };
 		E46850012337CAAC0067D7C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46850002337CAAC0067D7C9 /* LoginViewController.swift */; };
+		E46850042337FA300067D7C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46CE2FC2331391B003A5420 /* Main.storyboard */; };
 		E46CE2F92331391B003A5420 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CE2F82331391B003A5420 /* AppDelegate.swift */; };
 		E46CE2FB2331391B003A5420 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CE2FA2331391B003A5420 /* ViewController.swift */; };
-		E46CE2FE2331391B003A5420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46CE2FC2331391B003A5420 /* Main.storyboard */; };
 		E46CE3002331391D003A5420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46CE2FF2331391D003A5420 /* Assets.xcassets */; };
 		E46CE3032331391D003A5420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46CE3012331391D003A5420 /* LaunchScreen.storyboard */; };
 		E46CE30E2331391D003A5420 /* marketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CE30D2331391D003A5420 /* marketplaceTests.swift */; };
@@ -46,6 +51,11 @@
 		B101543DCAE57AC8D9B7065F /* Pods-marketplaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplaceUITests.debug.xcconfig"; path = "Target Support Files/Pods-marketplaceUITests/Pods-marketplaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9FDBDF548E8F76F33BAC0C7 /* Pods_marketplaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketplaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC00D0DC3F4220816991231 /* Pods_marketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E451C4FB23386970002541F4 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		E451C4FF23386EBB002541F4 /* BuyerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerTableViewController.swift; sourceTree = "<group>"; };
+		E451C50123387304002541F4 /* BuyerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerTableViewCell.swift; sourceTree = "<group>"; };
+		E451C503233892EF002541F4 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		E451C507233898E5002541F4 /* SellerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerTableViewController.swift; sourceTree = "<group>"; };
 		E46850002337CAAC0067D7C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E46CE2F52331391B003A5420 /* marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46CE2F82331391B003A5420 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +148,11 @@
 				E46CE2FF2331391D003A5420 /* Assets.xcassets */,
 				E46CE3012331391D003A5420 /* LaunchScreen.storyboard */,
 				E46CE3042331391D003A5420 /* Info.plist */,
+				E451C4FB23386970002541F4 /* Items.swift */,
+				E451C4FF23386EBB002541F4 /* BuyerTableViewController.swift */,
+				E451C50123387304002541F4 /* BuyerTableViewCell.swift */,
+				E451C503233892EF002541F4 /* AddItemViewController.swift */,
+				E451C507233898E5002541F4 /* SellerTableViewController.swift */,
 			);
 			path = marketplace;
 			sourceTree = "<group>";
@@ -278,9 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46850042337FA300067D7C9 /* Main.storyboard in Resources */,
 				E46CE3032331391D003A5420 /* LaunchScreen.storyboard in Resources */,
 				E46CE3002331391D003A5420 /* Assets.xcassets in Resources */,
-				E46CE2FE2331391B003A5420 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +406,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E451C508233898E5002541F4 /* SellerTableViewController.swift in Sources */,
+				E451C50023386EBB002541F4 /* BuyerTableViewController.swift in Sources */,
+				E451C50223387304002541F4 /* BuyerTableViewCell.swift in Sources */,
 				E46850012337CAAC0067D7C9 /* LoginViewController.swift in Sources */,
+				E451C4FC23386970002541F4 /* Items.swift in Sources */,
+				E451C504233892EF002541F4 /* AddItemViewController.swift in Sources */,
 				E46CE2FB2331391B003A5420 /* ViewController.swift in Sources */,
 				E46CE2F92331391B003A5420 /* AppDelegate.swift in Sources */,
 			);
