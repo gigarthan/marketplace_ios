@@ -23,6 +23,9 @@
 		E46CE3032331391D003A5420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46CE3012331391D003A5420 /* LaunchScreen.storyboard */; };
 		E46CE30E2331391D003A5420 /* marketplaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CE30D2331391D003A5420 /* marketplaceTests.swift */; };
 		E46CE3192331391D003A5420 /* marketplaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CE3182331391D003A5420 /* marketplaceUITests.swift */; };
+		E4950B8F233BD1240069ABB1 /* SellerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4950B8E233BD1240069ABB1 /* SellerTableViewCell.swift */; };
+		E4C8F9E0233C7E3900ABC303 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C8F9DF233C7E3900ABC303 /* noimage.png */; };
+		E4C8F9E2233C9CF400ABC303 /* BuyerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C8F9E1233C9CF400ABC303 /* BuyerDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		E46CE3142331391D003A5420 /* marketplaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = marketplaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E46CE3182331391D003A5420 /* marketplaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marketplaceUITests.swift; sourceTree = "<group>"; };
 		E46CE31A2331391D003A5420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4950B8E233BD1240069ABB1 /* SellerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerTableViewCell.swift; sourceTree = "<group>"; };
+		E4C8F9DF233C7E3900ABC303 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		E4C8F9E1233C9CF400ABC303 /* BuyerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerDetailsViewController.swift; sourceTree = "<group>"; };
 		F1738AE841479225758187C9 /* Pods-marketplaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplaceTests.release.xcconfig"; path = "Target Support Files/Pods-marketplaceTests/Pods-marketplaceTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +152,7 @@
 				E46CE2FA2331391B003A5420 /* ViewController.swift */,
 				E46CE2FC2331391B003A5420 /* Main.storyboard */,
 				E46CE2FF2331391D003A5420 /* Assets.xcassets */,
+				E4C8F9DF233C7E3900ABC303 /* noimage.png */,
 				E46CE3012331391D003A5420 /* LaunchScreen.storyboard */,
 				E46CE3042331391D003A5420 /* Info.plist */,
 				E451C4FB23386970002541F4 /* Items.swift */,
@@ -153,6 +160,8 @@
 				E451C50123387304002541F4 /* BuyerTableViewCell.swift */,
 				E451C503233892EF002541F4 /* AddItemViewController.swift */,
 				E451C507233898E5002541F4 /* SellerTableViewController.swift */,
+				E4950B8E233BD1240069ABB1 /* SellerTableViewCell.swift */,
+				E4C8F9E1233C9CF400ABC303 /* BuyerDetailsViewController.swift */,
 			);
 			path = marketplace;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 			files = (
 				E46850042337FA300067D7C9 /* Main.storyboard in Resources */,
 				E46CE3032331391D003A5420 /* LaunchScreen.storyboard in Resources */,
+				E4C8F9E0233C7E3900ABC303 /* noimage.png in Resources */,
 				E46CE3002331391D003A5420 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +418,9 @@
 			files = (
 				E451C508233898E5002541F4 /* SellerTableViewController.swift in Sources */,
 				E451C50023386EBB002541F4 /* BuyerTableViewController.swift in Sources */,
+				E4C8F9E2233C9CF400ABC303 /* BuyerDetailsViewController.swift in Sources */,
 				E451C50223387304002541F4 /* BuyerTableViewCell.swift in Sources */,
+				E4950B8F233BD1240069ABB1 /* SellerTableViewCell.swift in Sources */,
 				E46850012337CAAC0067D7C9 /* LoginViewController.swift in Sources */,
 				E451C4FC23386970002541F4 /* Items.swift in Sources */,
 				E451C504233892EF002541F4 /* AddItemViewController.swift in Sources */,

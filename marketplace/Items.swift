@@ -17,6 +17,8 @@ class Items: Object {
   @objc dynamic var desc: String = ""
   @objc dynamic var price: String = ""
   @objc dynamic var img: String = ""
+  @objc dynamic var latitude: Double = 0.0
+  @objc dynamic var longitude: Double = 0.0
   
   
   override class func primaryKey() -> String? {

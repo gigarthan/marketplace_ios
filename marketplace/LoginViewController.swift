@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import Photos
 
 enum UserRole {
   case BUYER
@@ -24,8 +25,6 @@ class LoginViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
   func showAlert(title: String, message: String) {
@@ -79,7 +78,7 @@ class LoginViewController: UIViewController {
       
       switch response.result {
       case .success:
-        self.showAlert(title: "LoggedIn", message: "Success")
+        self.showAlert(title: "Registered", message: "Success")
         
       case .failure:
         if let data = response.data {
@@ -119,14 +118,13 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func login(_ sender: Any) {
-    self.navigateToPage()
-//    if(isFieldsFilled()) {
-//      let email = emailField.text ?? ""
-//      let password = passwordField.text ?? ""
-//      loginUser(email: email, pass: password)
-//    } else {
-//      showAlert(title: "Invalid Credentials", message: "Email or Password fields cannot be empty!")
-//    }
+    if(isFieldsFilled()) {
+      let email = emailField.text ?? ""
+      let password = passwordField.text ?? ""
+      loginUser(email: email, pass: password)
+    } else {
+      showAlert(title: "Invalid Credentials", message: "Email or Password fields cannot be empty!")
+    }
   }
   @IBAction func register(_ sender: Any) {
     if(isFieldsFilled()) {

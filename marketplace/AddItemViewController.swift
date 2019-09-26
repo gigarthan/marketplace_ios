@@ -8,12 +8,17 @@
 
 import UIKit
 import RealmSwift
+import Photos
 
 class AddItemViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate  {
   @IBOutlet weak var itemName: UITextField!
   @IBOutlet weak var itemDesc: UITextField!
   @IBOutlet weak var itemPrice: UITextField!
   @IBOutlet weak var itemImg: UIImageView!
+  
+  var imageUrl: String = ""
+  var latitude: Double = 0.0
+  var longitude: Double = 0.0
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +46,9 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate,U
       newItem.title = itemName.text!
       newItem.desc = itemDesc.text!
       newItem.price = itemPrice.text!
-//      newItem.img = itemImg.image
+      newItem.longitude = longitude
+      newItem.latitude = latitude
+      newItem.img = imageUrl
       
       realm.add(newItem)
       print("Item Added")
@@ -91,6 +98,41 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate,U
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
    
+    if #available(iOS 11.0, *) {
+      let imageNSUrl = info[UIImagePickerController.InfoKey.imageURL] as? NSURL
+      imageUrl = imageNSUrl?.relativeString ?? ""
+      
+    } else {
+      // Fallback on earlier versions
+    }
+    
+    let status = PHPhotoLibrary.authorizationStatus()
+    
+    if status == .notDetermined  {
+      PHPhotoLibrary.requestAuthorization({status in
+        if #available(iOS 11.0, *) {
+          if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
+            if let photoCoordinate = asset.location?.coordinate {
+              self.latitude = photoCoordinate.latitude
+              self.longitude = photoCoordinate.longitude
+            }
+          }
+        }
+      })
+    } else {
+      if #available(iOS 11.0, *) {
+        if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
+          if let photoCoordinate = asset.location?.coordinate {
+            latitude = photoCoordinate.latitude
+            longitude = photoCoordinate.longitude
+          }
+        }
+      }
+    }
+    
+    
+    
+    
     itemImg.image = originalImage
     
     // Dismiss UIImagePickerController to go back to your original view controller

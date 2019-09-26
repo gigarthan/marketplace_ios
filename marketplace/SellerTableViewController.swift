@@ -52,7 +52,7 @@ class SellerTableViewController: UITableViewController {
     }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "sellerCell", for: indexPath) as! BuyerTableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "sellerCell", for: indexPath) as! SellerTableViewCell
     
     let row = itemsList[indexPath.row]
     
@@ -60,9 +60,19 @@ class SellerTableViewController: UITableViewController {
     cell.itemDescription.text = row.desc
     cell.itemPrice.text = row.price
     
+
+    let url = URL(string: row.img)
+    if let url = url {
+      let data = try? Data(contentsOf: url)
+      if let data = data {
+        cell.itemImage.image = UIImage(data: data)
+      }  
+    }
+    
+    
     return cell
   }
-
+  
   deinit {
     notificationToken?.invalidate()
   }

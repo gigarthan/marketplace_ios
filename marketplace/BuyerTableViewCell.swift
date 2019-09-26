@@ -10,7 +10,6 @@ import UIKit
 
 class BuyerTableViewCell: UITableViewCell {
   @IBOutlet weak var itemName: UILabel!
-  @IBOutlet weak var itemDescription: UILabel!
   @IBOutlet weak var itemPrice: UILabel!
   
     override func awakeFromNib() {
@@ -23,5 +22,4 @@ class BuyerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
