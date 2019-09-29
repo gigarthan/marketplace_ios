@@ -9,6 +9,7 @@ target 'marketplace' do
   pod 'Alamofire', '~> 4.0.0-rc.2'
   pod 'RealmSwift'
   pod 'SwiftyJSON'
+  pod 'IQKeyboardManagerSwift'
   # Pods for marketplace
 
   target 'marketplaceTests' do
